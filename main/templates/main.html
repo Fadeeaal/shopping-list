@@ -27,12 +27,11 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <a class="nav-link disabled" aria-disabled="true">Rakha Fadil Atmojo</a>
             </li>
             </ul>
-            <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <a href="{% url 'main:logout' %}">
+            <button class="btn btn-outline-success" type="submit">Logout</button><a/>
             </form>
         </div>
         </div>
@@ -86,10 +85,6 @@
         </button>
     </a>
 
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
+
 
 {% endblock content %}
