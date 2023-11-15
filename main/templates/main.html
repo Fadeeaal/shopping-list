@@ -29,14 +29,13 @@
                 <a class="nav-link disabled" aria-disabled="true">Rakha Fadil Atmojo - PBP C</a>
             </li>
             </ul>
+            <h4>Hello, {{ name }}</h4>
             <a href="{% url 'main:logout' %}">
             <button class="btn btn-outline-success" type="submit">Logout</button><a/>
             </form>
         </div>
         </div>
     </nav>
-
-    <h4>Hello, {{ name }}</h4>
 
     <table id="product_table"></table>
 
@@ -77,7 +76,7 @@
     <h5>Sesi terakhir login: {{ last_login }}</h5>
 
     <script>
-        async function getProducts() {
+        async function getProducts() { //Menggunakan pendekatan AJAX GET
             return fetch("{% url 'main:get_product_json' %}").then((res) => res.json())
         }
         async function refreshProducts() {
@@ -113,7 +112,7 @@
             })
             document.getElementById("product_table").innerHTML = htmlString
         }
-        refreshProducts()
+        refreshProducts() //Pemanggilan AJAX GET
         function addProduct() {
             fetch("{% url 'main:add_product_ajax' %}", {
                 method: "POST",
